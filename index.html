@@ -38,69 +38,45 @@
 
 	 <script>
         dataLayer.push({
-            'transactionId': '{{transactionId}}',
-            'transactionDate': '{{transactionDate}}',
-            'transactionTime': '{{transactionTime}}',
-            'transactionTotal': '{{transactionTotal}}',
-            'transactionTotalNetto': '{{transactionTotalNetto}}',
-            'transactionTax': '{{transactionTax}}',
-            {% if transactionShippingCost != 'null' %}
-                'transactionShippingCost': '{{transactionShippingCost}}',
-            {% endif %}
-            'transactionShippingMethod': '{{transactionShippingMethod}}',
-            'transactionPayment': '{{transactionPayment}}',
-            'transactionCurrency': '{{transactionCurrency}}',
-            'transactionPromoCode': '{{transactionPromoCode}}',
-            'transactionProducts': {{transactionProducts|json_encode(constant('JSON_UNESCAPED_UNICODE'))|raw}}
+            'transactionId': '123',
+            'transactionDate': '123',
+            'transactionTime': '123',
+            'transactionTotal': '123',
+            'transactionTotalNetto': '123',
+            'transactionTax': '123',
+            'transactionShippingMethod': '123',
+            'transactionPayment': '123',
+            'transactionCurrency': '123',
+            'transactionPromoCode': '123',
+            'transactionProducts': 123
         });
     </script>
-
+ 
 	<script>
         ga('set', 'userId', '{{userId}}');
         ga('set', 'page', 'koszyk/potwierdzenie');
         //ga('send', 'pageview');
 
         ga('ecommerce:addTransaction', {
-            'id': '{{transactionId}}',
+            'id': '123',
             'affiliation': 'TXM24',
-            'revenue': '{{transactionTotal}}',
-            'shipping': '{{cart.transport.displayName}}',
-            'payment': '{{cart.payment.displayName}}',
-            'tax': '{{transactionTax}}',
-            'currency': '{{cart.currency}}',
-            'coupon': '{{transactionPromoCode}}'
+            'revenue': '123',
+            'shipping': '123',
+            'payment': '123',
+            'tax': '123',
+            'currency': '123',
+            'coupon': '123'
         });
-        {% for i in cart.items %}
-            {% set offer = i.getofferDTO() %}
-            {% set category = 'null' %}
-            {% if offer.category is not null %}
-                {% set category = offer.category.displayName %}
-            {% endif %}
-            {% set erpId = offer.systemAttributeValues('erp_id')|default(offer.id) %}
-            {% set productQuantity = 'null' %}
-            {% if i.storage is defined and  i.storage is not null and i.storage.qty is defined %}
-                {% set productQuantity = i.storage.qty %}
-            {% endif %}
-            {% set price = offer.price|money_as_float %}
-            {% if promoPriceInfo %}
-                {% set price = promoPriceInfo.new_price|money_as_float %}
-            {% endif %}
-            {% set color = offer.systemAttributeValues('color_enp')|default('null') %}
-            {% set size = offer.systemAttributeValues('size_enp')|default('null') %}
 
-            ga('ecommerce:addItem', {
-                'id': '{{erpId}}',
-                'name': '{{offer.name}}',
-                'sku': '{{i.refNumber}}',
-                'category': '{{category}}',
-                'color': '{{color}}',
-                'size': '{{size}}',
-                {% if productQuantity != 'null' %}
-                    'quantity': '{{productQuantity}}',
-                {% endif %}
-                'price': price
-            });
-        {% endfor %}
+        ga('ecommerce:addItem', {
+            'id': '123',
+            'name': '12321321',
+            'sku': '132321',
+            'category': '1232121',
+            'color': '312312',
+            'size': '1321321',
+            'price': 1421421
+        });
         ga('ecommerce:send');
     </script>
 
@@ -110,13 +86,13 @@
 	        type: 'sales', 
 	        campaignID: '19099',
 	        productID: '28336',
-	        transactionID: '{{ order.number }}', 
-	        transactionAmount: '{{ order.total|money_as_float }}', 
-	        quantity: '{{ groupedItems|length }}', 
+	        transactionID: '12323', 
+	        transactionAmount: '12321', 
+	        quantity: '31212', 
 	        email: '', 
 	        descrMerchant: '', 
 	        descrAffiliate: '', 
-	        currency: '{{ order.currency }}'
+	        currency: 'PLN'
 	    };
 
 	    (function(ttConversionOptions) {
