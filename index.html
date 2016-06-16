@@ -54,9 +54,9 @@
     </script>
  
 	<script>
-        ga('set', 'userId', '123412412');
+        ga('set', 'userId', Math.floor((Math.random() * 1000) + 1) );
         ga('set', 'page', 'koszyk/potwierdzenie');
-        //ga('send', 'pageview');
+        ga('send', 'pageview');
 
         ga('ecommerce:addTransaction', {
             'id': '123',
