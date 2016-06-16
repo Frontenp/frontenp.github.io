@@ -12,13 +12,13 @@
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-79355654-1', 'auto');
-        ga('require', 'ecommerce');
 	</script>
 </head>
 <body>
 	<div id="enp-lpXXX">
 		<div id="enp-lpXXX_mainWrapper">
 			Test GA
+			<a href="#" id="addToCart">Dodaj do koszyka</a>
 		</div>
 	</div>
 
@@ -37,30 +37,23 @@
 
 
 	<script>
-        ga('set', 'page', 'koszyk/potwierdzenie');
+       
+
+		ga("require", "ec");
+		ga("ec:addProduct", {
+		  "id": "57b9d",
+		  "name": "Kiosk T-Shirt",
+		  "price": "55.00",
+		  "brand": "Kiosk",
+		  "category": "T-Shirts",
+		  "variant": "red",
+		  "dimension1": "M",
+		  "quantity": 1
+		});
+		ga("ec:setAction", "add");
+		ga("send", "event", "detail view", "click", "addToCart");
+		ga('set', 'page', 'koszyk/potwierdzenie');
         ga('send', 'pageview');
-
-        ga('ecommerce:addTransaction', {
-            'id': '123',
-            'affiliation': 'TXM24',
-            'revenue': '123',
-            'shipping': '123',
-            'payment': '123',
-            'tax': '123',
-            'currency': '123',
-            'coupon': '123'
-        });
-
-        ga('ecommerce:addItem', {
-            'id': '123',
-            'name': '12321321',
-            'sku': '132321',
-            'category': '1232121',
-            'color': '312312',
-            'size': '1321321',
-            'price': 1421421
-        });
-        ga('ecommerce:send');
     </script>
 </body>
 </html>
