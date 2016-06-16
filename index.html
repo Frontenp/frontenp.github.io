@@ -54,7 +54,7 @@
     </script>
  
 	<script>
-        ga('set', 'userId', '{{userId}}');
+        ga('set', 'userId', '123412412');
         ga('set', 'page', 'koszyk/potwierdzenie');
         //ga('send', 'pageview');
 
@@ -80,32 +80,5 @@
         });
         ga('ecommerce:send');
     </script>
-
-
-	<script type="text/javascript"><!-- // --><![CDATA[
-	    var ttConversionOptions = {
-	        type: 'sales', 
-	        campaignID: '19099',
-	        productID: '28336',
-	        transactionID: '12323', 
-	        transactionAmount: '12321', 
-	        quantity: '31212', 
-	        email: '', 
-	        descrMerchant: '', 
-	        descrAffiliate: '', 
-	        currency: 'PLN'
-	    };
-
-	    (function(ttConversionOptions) {
-	        var campaignID = 'campaignID' in ttConversionOptions ? ttConversionOptions.campaignID : ('length' in ttConversionOptions && ttConversionOptions.length ? ttConversionOptions[0].campaignID : null);
-	        var tt = document.createElement('script'); tt.type = 'text/javascript'; tt.async = true; tt.src = '//tm.tradetracker.net/conversion?s=' + encodeURIComponent(campaignID) + '&t=m';
-	        var s = document.getElementsByTagName('script'); s[s.length - 1].parentNode.insertBefore(tt, s[s.length - 1]);
-	    })(ttConversionOptions);
-	// ]]></script>
-	<noscript><img src="//ts.tradetracker.net/?cid=19099&amp;pid=28336&amp;tid={{ order.number }}&amp;tam={{ order.total|money_as_float }}&amp;data=&amp;qty={{ groupedItems|length }}}&amp;eml=&amp;descrMerchant=&amp;descrAffiliate=&amp;event=sales&amp;currency={{ order.currency }}" alt="" /></noscript>
- 
-
-
-
 </body>
 </html>
