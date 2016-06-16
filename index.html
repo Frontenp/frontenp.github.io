@@ -12,6 +12,7 @@
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-79355654-1', 'auto');
+        ga('require', 'ecommerce');
 	</script>
 </head>
 <body>
@@ -36,46 +37,29 @@
 
 
 	<script>
-
-
-		dataLayer.push({
-		  "event": "addToCart",
-		  "ecommerce": {
-		    "currencyCode": "USD",
-		    "add": {
-		      "products": [{
-		        "id": "57b9d",
-		        "name": "Kiosk T-Shirt",
-		        "price": "55.00",
-		        "brand": "Kiosk",
-		        "category": "T-Shirts",
-		        "variant": "red",
-		        "dimension1": "M",
-		        "quantity": 1
-		      }]
-		    }
-		  }
-		});
-	
-        ga('require', 'ecommerce');
+        ga('set', 'page', 'koszyk/potwierdzenie');
+        ga('send', 'pageview');
 
         ga('ecommerce:addTransaction', {
-		  'id': '1234',                     // Transaction ID. Required.
-		  'affiliation': 'Acme Clothing',   // Affiliation or store name.
-		  'revenue': '11.99',               // Grand Total.
-		  'shipping': '5',                  // Shipping.
-		  'tax': '1.29'                     // Tax.
-		});
+            'id': '123',
+            'affiliation': 'TXM24',
+            'revenue': '123',
+            'shipping': '123',
+            'payment': '123',
+            'tax': '123',
+            'currency': '123',
+            'coupon': '123'
+        });
 
         ga('ecommerce:addItem', {
-		  'id': '1234',                     // Transaction ID. Required.
-		  'name': 'Fluffy Pink Bunnies',    // Product name. Required.
-		  'sku': 'DD23444',                 // SKU/code.
-		  'category': 'Party Toys',         // Category or variation.
-		  'price': '11.99',                 // Unit price.
-		  'quantity': '1'                   // Quantity.
-		});
-
+            'id': '123',
+            'name': '12321321',
+            'sku': '132321',
+            'category': '1232121',
+            'color': '312312',
+            'size': '1321321',
+            'price': 1421421
+        });
         ga('ecommerce:send');
     </script>
 </body>
