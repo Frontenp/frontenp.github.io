@@ -12,7 +12,6 @@
 		m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 		})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
 		ga('create', 'UA-79355654-1', 'auto');
-        ga('require', 'ecommerce');
 	</script>
 </head>
 <body>
@@ -36,25 +35,8 @@
 	<!-- End Google Tag Manager -->
 
 
-	 <script>
-        dataLayer.push({
-            'transactionId': '123',
-            'transactionDate': '123',
-            'transactionTime': '123',
-            'transactionTotal': 123,
-            'transactionTotalNetto': 123,
-            'transactionTax': 123,
-            'transactionShippingMethod': 123,
-            'transactionPayment': 123,
-            'transactionCurrency': 123,
-            'transactionPromoCode': 123,
-            'transactionProducts': 123
-        });
-    </script>
-
 	<script>
-        ga('set', 'page', 'koszyk/potwierdzenie');
-        ga('send', 'pageview');
+        ga('require', 'ecommerce');
 
         ga('ecommerce:addTransaction', {
             'id': '123',
