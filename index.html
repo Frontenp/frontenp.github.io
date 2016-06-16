@@ -36,6 +36,27 @@
 
 
 	<script>
+
+
+		dataLayer.push({
+		  "event": "addToCart",
+		  "ecommerce": {
+		    "currencyCode": "USD",
+		    "add": {
+		      "products": [{
+		        "id": "57b9d",
+		        "name": "Kiosk T-Shirt",
+		        "price": "55.00",
+		        "brand": "Kiosk",
+		        "category": "T-Shirts",
+		        "variant": "red",
+		        "dimension1": "M",
+		        "quantity": 1
+		      }]
+		    }
+		  }
+		});
+	
         ga('require', 'ecommerce');
 
         ga('ecommerce:addTransaction', {
