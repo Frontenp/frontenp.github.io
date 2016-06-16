@@ -39,25 +39,22 @@
         ga('require', 'ecommerce');
 
         ga('ecommerce:addTransaction', {
-            'id': '123',
-            'affiliation': 'TXM24',
-            'revenue': '123',
-            'shipping': '123',
-            'payment': '123',
-            'tax': '123',
-            'currency': '123',
-            'coupon': '123'
-        });
+		  'id': '1234',                     // Transaction ID. Required.
+		  'affiliation': 'Acme Clothing',   // Affiliation or store name.
+		  'revenue': '11.99',               // Grand Total.
+		  'shipping': '5',                  // Shipping.
+		  'tax': '1.29'                     // Tax.
+		});
 
         ga('ecommerce:addItem', {
-            'id': '123',
-            'name': '12321321',
-            'sku': '132321',
-            'category': '1232121',
-            'color': '312312',
-            'size': '1321321',
-            'price': 1421421
-        });
+		  'id': '1234',                     // Transaction ID. Required.
+		  'name': 'Fluffy Pink Bunnies',    // Product name. Required.
+		  'sku': 'DD23444',                 // SKU/code.
+		  'category': 'Party Toys',         // Category or variation.
+		  'price': '11.99',                 // Unit price.
+		  'quantity': '1'                   // Quantity.
+		});
+
         ga('ecommerce:send');
     </script>
 </body>
