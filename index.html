@@ -72,7 +72,9 @@
           methods: {
             sendMsg: function () {
                fakedItem.name = this.message;
-               var fakeTransaction = faker.finance.account();
+               var fakeTransactionNew = faker.finance.account();
+               fakedTransaction.id = fakeTransactionNew;
+               fakedItem.id = fakeTransactionNew;
                ga('ecommerce:addTransaction', fakedTransaction);
                ga('ecommerce:addItem', fakedItem);
                ga('ecommerce:send');
