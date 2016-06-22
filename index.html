@@ -33,9 +33,10 @@
 
         var fakeTransaction = faker.finance.account();
         var fakeUserID = faker.phone.phoneNumber();
+        var fakeProduct = faker.commerce.productName();
 
         var fakedTransaction = {
-            'id': fakeTransaction,
+            'id': fakeTransaction + fakeProduct,
             'affiliation': faker.finance.transactionType(),
             'revenue': faker.finance.amount(),
             'shipping': faker.address.streetName(),
@@ -46,7 +47,7 @@
         }
 
         var fakedItem = {
-            'id': fakeTransaction,
+            'id': fakeTransaction + fakeProduct,
             'name': faker.commerce.productName(),
             'sku': faker.commerce.productAdjective(),
             'category': faker.commerce.department(), 
@@ -73,8 +74,8 @@
             sendMsg: function () {
                fakedItem.name = this.message;
                var fakeTransactionNew = faker.finance.account();
-               fakedTransaction.id = fakeTransactionNew;
-               fakedItem.id = fakeTransactionNew;
+               fakedTransaction.id = fakeTransactionNew + fakeProduct;
+               fakedItem.id = fakeTransactionNew + fakeProduct;
                ga('ecommerce:addTransaction', fakedTransaction);
                ga('ecommerce:addItem', fakedItem);
                ga('ecommerce:send');
