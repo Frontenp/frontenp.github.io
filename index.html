@@ -51,16 +51,17 @@
             'name': faker.commerce.productName(),
             'sku': faker.commerce.productAdjective(),
             'category': faker.commerce.department(), 
+            'price': faker.commerce.price(),
+            'quantity': faker.random.number(),
             'color': faker.commerce.color(), 
-            'size': faker.commerce.productMaterial(),
-            'price': faker.commerce.price()
+            'size': faker.commerce.productMaterial()
         }
 
         ga('require', 'ecommerce', 'ecommerce.js');
-         ga('ecommerce:addTransaction', fakedTransaction);
-            ga('ecommerce:addItem', fakedItem);
-            ga('ecommerce:send');
-            ga('send', 'pageView');
+        ga('ecommerce:addTransaction', fakedTransaction);
+        ga('ecommerce:addItem', fakedItem);
+        ga('ecommerce:send');
+        ga('send', 'pageView');
         console.log(fakedTransaction, fakedItem);
         $('#enp-lpXXX_mainWrapper').html(fakedTransaction.id + '' + fakedItem.name)
       
