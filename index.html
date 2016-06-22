@@ -76,6 +76,8 @@
           methods: {
             sendMsg: function () {
                fakedItem.name = this.message;
+               ga('ecommerce:addTransaction', fakedTransaction);
+               ga('ecommerce:addItem', fakedItem);
                ga('ecommerce:send');
                console.log('ga was send with ' + fakedItem.name)
             }
