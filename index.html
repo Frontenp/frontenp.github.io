@@ -11,29 +11,17 @@
     </script>
    <script src="faker.min.js" type="text/javascript"></script>
    <script src="https://cdn.jsdelivr.net/vue/1.0.25/vue.min.js"></script>
-   <!-- Firebase -->
-  <script src="https://gstatic.com/firebasejs/3.0.3/firebase.js"></script>
-  <!-- VueFire -->
-  <script src="https://cdn.jsdelivr.net/vuefire/1.1.0/vuefire.min.js"></script>
-    <script>
-      // Initialize Firebase
-      var config = { 
-        apiKey: "AIzaSyDSiU3qLOXXTIyHAXQR0x_k7gqnkQ_3VXo",
-        authDomain: "ga-test-eb7f7.firebaseapp.com",
-        databaseURL: "https://ga-test-eb7f7.firebaseio.com",
-        storageBucket: "",
-      };
-      var firebaseApp = firebase.initializeApp(config)
-      var db = firebaseApp.database()
-
-        var vm = new Vue({
-          el: '#demo',
-          firebase: {
-            // simple syntax, bind as an array by default
-            anArray: db.ref('https://ga-test-eb7f7.firebaseio.com/')
-          }
-        })
-    </script>
+   <script src="https://gstatic.com/firebasejs/3.0.3/firebase.js"></script>
+     <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyDSiU3qLOXXTIyHAXQR0x_k7gqnkQ_3VXo",
+            authDomain: "ga-test-eb7f7.firebaseapp.com",
+            databaseURL: "https://ga-test-eb7f7.firebaseio.com",
+            storageBucket: "",
+          };
+          firebase.initializeApp(config);
+        </script>
 </head>
 <body>
 	<div id="enp-lpXXX">
@@ -88,7 +76,6 @@
         console.log(fakedTransaction, fakedItem);
         $('#enp-lpXXX_mainWrapper').html(fakedTransaction.id + '' + fakedItem.name)
       
-        vm.$firebaseRefs.anArray.push(fakedTransaction)
 
         new Vue({
           el: '#app',
