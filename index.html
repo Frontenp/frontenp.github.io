@@ -41,7 +41,7 @@
             'shipping': faker.address.streetName(),
             'payment': faker.commerce.price(),
             'tax': faker.commerce.price(),
-            'currency': faker.finance.currencyName(),
+            'currency': "USD",
             'coupon': faker.finance.currencyName()
         }
 
@@ -56,15 +56,13 @@
         }
 
         ga('require', 'ecommerce', 'ecommerce.js');
-        ga('ecommerce:addTransaction', fakedTransaction);
-        ga('ecommerce:addItem', fakedItem);
-        ga('ecommerce:send');
-        ga('send', 'pageView');
-
         console.log(fakedTransaction, fakedItem);
         $('#enp-lpXXX_mainWrapper').html(fakedTransaction.id + '' + fakedItem.name)
         $(function(){
+            ga('ecommerce:addTransaction', fakedTransaction);
+            ga('ecommerce:addItem', fakedItem);
             ga('ecommerce:send');
+            ga('send', 'pageView');
             console.log('ga was send with ' + fakedTransaction.id)
         })
 
@@ -76,9 +74,11 @@
           methods: {
             sendMsg: function () {
                fakedItem.name = this.message;
+               var fakeTransaction = faker.finance.account();
                ga('ecommerce:addTransaction', fakedTransaction);
                ga('ecommerce:addItem', fakedItem);
                ga('ecommerce:send');
+               ga('send', 'pageView');
                console.log('ga was send with ' + fakedItem.name)
             }
           }
