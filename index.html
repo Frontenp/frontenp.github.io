@@ -56,15 +56,13 @@
         }
 
         ga('require', 'ecommerce', 'ecommerce.js');
-        console.log(fakedTransaction, fakedItem);
-        $('#enp-lpXXX_mainWrapper').html(fakedTransaction.id + '' + fakedItem.name)
-        $(function(){
-            ga('ecommerce:addTransaction', fakedTransaction);
+         ga('ecommerce:addTransaction', fakedTransaction);
             ga('ecommerce:addItem', fakedItem);
             ga('ecommerce:send');
             ga('send', 'pageView');
-            console.log('ga was send with ' + fakedTransaction.id)
-        })
+        console.log(fakedTransaction, fakedItem);
+        $('#enp-lpXXX_mainWrapper').html(fakedTransaction.id + '' + fakedItem.name)
+      
 
         new Vue({
           el: '#app',
