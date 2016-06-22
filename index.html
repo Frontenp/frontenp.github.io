@@ -56,7 +56,7 @@
         ga('send', 'pageView');
 
         console.log(fakedTransaction, fakedItem);
-        $('#enp-lpXXX_mainWrapper').html(fakedTransaction.id)
+        $('#enp-lpXXX_mainWrapper').html(fakedTransaction.id + '' + fakedItem.name)
         $(function(){
             ga('ecommerce:send');
             console.log('ga was send with ' + fakedTransaction.id)
