@@ -84,7 +84,7 @@
           },
           methods: {
             sendMsg: function () {
-               fakedItem.name = this.message;
+               fakedItem.name = this.message; 
                var fakeTransactionNew = faker.finance.account();
                fakedTransaction.id = fakeTransactionNew + fakeProduct;
                fakedItem.id = fakeTransactionNew + fakeProduct;
